@@ -34,23 +34,28 @@
       </el-form>
       <div class="login-footer">
         <span class="login-text">Нет аккаунта? </span>
-        <router-link to="/register" class="login-link">Зарегистрироваться</router-link>
+        <router-link to="/register" class="login-link"
+          >Зарегистрироваться</router-link
+        >
       </div>
     </el-card>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { ElMessage } from 'element-plus'
+import { ref } from "vue";
+import { ElMessage } from "element-plus";
 
-const email = ref('')
-const password = ref('')
+const email = ref("");
+const password = ref("");
 
 const handleLogin = () => {
-  console.log('Login attempt:', { email: email.value, password: password.value })
-  ElMessage.success('Вход выполнен успешно')
-}
+  console.log("Login attempt:", {
+    email: email.value,
+    password: password.value
+  });
+  ElMessage.success("Вход выполнен успешно");
+};
 </script>
 
 <style scoped>

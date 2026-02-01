@@ -55,64 +55,73 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { ElMessage } from 'element-plus'
-import { Bell, Picture, ChatDotRound, MoreFilled, Star, ChatLineRound, Share } from '@element-plus/icons-vue'
+import { ref } from "vue";
+import { ElMessage } from "element-plus";
+import {
+  Bell,
+  Picture,
+  ChatDotRound,
+  MoreFilled,
+  Star,
+  ChatLineRound,
+  Share,
+} from "@element-plus/icons-vue";
 
-const newPostContent = ref('')
+const newPostContent = ref("");
 
 const posts = ref([
   {
     id: 1,
-    author: 'Дмитрий Чернов',
-    authorInitials: 'ДЧ',
-    timeAgo: '2 часа назад',
-    content: 'Привет всем! Хочу начать проект, наконец-то решились с ребятами что-то запилить!',
+    author: "Дмитрий Чернов",
+    authorInitials: "ДЧ",
+    timeAgo: "2 часа назад",
+    content:
+      "Привет всем! Хочу начать проект, наконец-то решились с ребятами что-то запилить!",
     likes: 12,
-    comments: 3
+    comments: 3,
   },
   {
     id: 2,
-    author: 'Клим Кадыков',
-    authorInitials: 'КК',
-    timeAgo: '5 часов назад',
-    content: 'Vue намного круче React и это факт!',
+    author: "Клим Кадыков",
+    authorInitials: "КК",
+    timeAgo: "5 часов назад",
+    content: "Vue намного круче React и это факт!",
     likes: 8,
-    comments: 5
+    comments: 5,
   },
   {
     id: 3,
-    author: 'Иван Ежов',
-    authorInitials: 'ИЕ',
-    timeAgo: '1 день назад',
-    content: 'Куда же меня занесло...',
+    author: "Иван Ежов",
+    authorInitials: "ИЕ",
+    timeAgo: "1 день назад",
+    content: "Куда же меня занесло...",
     likes: 24,
-    comments: 12
-  }
-])
+    comments: 12,
+  },
+]);
 
 const createPost = () => {
-  if (!newPostContent.value.trim()) return
+  if (!newPostContent.value.trim()) return;
 
   const newPost = {
     id: Date.now(),
-    author: 'Вы',
-    authorInitials: 'В',
-    timeAgo: 'Только что',
+    author: "Вы",
+    authorInitials: "В",
+    timeAgo: "Только что",
     content: newPostContent.value,
     likes: 0,
-    comments: 0
-  }
+    comments: 0,
+  };
 
-  posts.value.unshift(newPost)
-  newPostContent.value = ''
-  ElMessage.success('Пост опубликован')
-}
+  posts.value.unshift(newPost);
+  newPostContent.value = "";
+  ElMessage.success("Пост опубликован");
+};
 
 const toggleLike = (post: any) => {
-  post.likes++
-  ElMessage.success('Лайк добавлен')
-}
+  post.likes++;
+  ElMessage.success("Лайк добавлен");
+};
 </script>
 
 <style scoped>

@@ -6,12 +6,7 @@
       </template>
       <el-form @submit.prevent="handleRegister">
         <el-form-item>
-          <el-input
-            v-model="name"
-            placeholder="Имя"
-            size="large"
-            clearable
-          />
+          <el-input v-model="name" placeholder="Имя" size="large" clearable />
         </el-form-item>
         <el-form-item>
           <el-input
@@ -59,22 +54,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { ElMessage } from 'element-plus'
+import { ref } from "vue";
+import { ElMessage } from "element-plus";
 
-const name = ref('')
-const email = ref('')
-const password = ref('')
-const confirmPassword = ref('')
+const name = ref("");
+const email = ref("");
+const password = ref("");
+const confirmPassword = ref("");
 
 const handleRegister = () => {
   if (password.value !== confirmPassword.value) {
-    ElMessage.error('Пароли не совпадают')
-    return
+    ElMessage.error("Пароли не совпадают");
+    return;
   }
-  console.log('Register attempt:', { name: name.value, email: email.value, password: password.value })
-  ElMessage.success('Регистрация успешна')
-}
+  console.log("Register attempt:", {
+    name: name.value,
+    email: email.value,
+    password: password.value,
+  });
+  ElMessage.success("Регистрация успешна");
+};
 </script>
 
 <style scoped>
