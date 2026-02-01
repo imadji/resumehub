@@ -8,7 +8,20 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2" />
+        <PackageReference Include="Microsoft.Extensions.ApiDescription.Server" Version="10.0.2">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Kiota.Bundle" Version="1.21.2" />
     </ItemGroup>
+    <PropertyGroup>
+        <!-- Это заставит проект генерировать swagger/openapi JSON при каждой сборке -->
+        <OpenApiDocumentsDirectory>$(MSBuildProjectDirectory)</OpenApiDocumentsDirectory>
+        <OpenApiGenerateDocuments>true</OpenApiGenerateDocuments>
+    </PropertyGroup>
 
+    <Target Name="GenerateKiotaClient" AfterTargets="GenerateOpenApiDocuments" Condition="'$(Configuration)' == 'Debug'">
+        <Exec Command="kiota generate -l TypeScript -d ./ResumeHab.Server.json -o ../ResumeHab.Client/src/api-client -n ResumeHabApi --clean-output" />
+    </Target>
 </Project>
