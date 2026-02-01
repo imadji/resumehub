@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeHab.Server", "ResumeHab.Server\ResumeHab.Server.csproj", "{14EC7B6A-0905-43AD-B369-18597305795F}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "ResumeHab.Client", "ResumeHab.Client\ResumeHab.Client.esproj", "{9AA116D2-6F51-450C-A8CF-3853CDA05D40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14EC7B6A-0905-43AD-B369-18597305795F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14EC7B6A-0905-43AD-B369-18597305795F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14EC7B6A-0905-43AD-B369-18597305795F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14EC7B6A-0905-43AD-B369-18597305795F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AA116D2-6F51-450C-A8CF-3853CDA05D40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AA116D2-6F51-450C-A8CF-3853CDA05D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AA116D2-6F51-450C-A8CF-3853CDA05D40}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AA116D2-6F51-450C-A8CF-3853CDA05D40}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+EndGlobal
