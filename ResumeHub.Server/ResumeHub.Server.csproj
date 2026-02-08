@@ -8,6 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="linq2db.PostgreSQL" Version="6.1.0" />
+        <PackageReference Include="linq2db.Scaffold" Version="6.1.0" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2" />
         <PackageReference Include="Microsoft.Extensions.ApiDescription.Server" Version="10.0.2">
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -22,6 +24,6 @@
     </PropertyGroup>
 
     <Target Name="GenerateKiotaClient" AfterTargets="GenerateOpenApiDocuments" Condition="'$(Configuration)' == 'Debug'">
-        <Exec Command="kiota generate -l TypeScript -d ./ResumeHab.Server.json -o ../ResumeHab.Client/src/api-client -n ResumeHabApi --clean-output" />
+        <Exec Command="kiota generate -l TypeScript -d ResumeHub.Server.json -o ../ResumeHub.Client/src/api-client -n ResumeHabApi --clean-output" />
     </Target>
 </Project>

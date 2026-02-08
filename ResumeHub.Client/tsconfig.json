@@ -1,5 +1,12 @@
 {
   "files": [],
+  "include": ["./typed-router.d.ts"],
+   "compilerOptions": {
+    "noEmit": true,
+    "types": [
+      "unplugin-vue-router/client"
+    ]
+  },
   "references": [
     {
       "path": "./tsconfig.node.json"

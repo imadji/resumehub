@@ -1,27 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
-import LoginView from "../views/Login.vue";
-import RegisterView from "../views/Register.vue";
-import FeedView from "../views/Feed.vue";
+import { routes, handleHotUpdate } from "vue-router/auto-routes";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: "/",
-      name: "feed",
-      component: FeedView,
-    },
-    {
-      path: "/login",
-      name: "login",
-      component: LoginView,
-    },
-    {
-      path: "/register",
-      name: "register",
-      component: RegisterView,
-    },
-  ],
+  routes: [...routes],
 });
+
+if (import.meta.hot) {
+  handleHotUpdate(router);
+}
 
 export default router;

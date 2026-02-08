@@ -52,7 +52,7 @@ const password = ref("");
 const handleLogin = () => {
   console.log("Login attempt:", {
     email: email.value,
-    password: password.value
+    password: password.value,
   });
   ElMessage.success("Вход выполнен успешно");
 };
