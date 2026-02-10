@@ -1,6 +1,12 @@
 <template>
   <header class="header">
     <h1 class="title">Лента</h1>
+    <div class="header__navs">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
     <div class="header__actions">
       <el-badge :value="3" class="header__badge">
         <el-icon :size="24" class="header__icon"><Bell /></el-icon>
@@ -10,6 +16,8 @@
   </header>
 </template>
 <style>
+@reference "@/main.css";
+
 .header {
   display: flex;
   align-items: center;
@@ -46,5 +54,9 @@
 
 .header__icon:hover {
   color: #409eff;
+}
+
+.header__navs {
+  @apply flex flex-row justify-center bg-stone-100;
 }
 </style>

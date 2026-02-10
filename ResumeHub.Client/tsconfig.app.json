@@ -9,7 +9,7 @@
     "types": [
       "unplugin-vue-router/client",
       "vite/client" 
-    ]
+    ], 
   },
-  "include": ["src/**/*.ts", "src/**/*.vue", "src/**/*.d.ts", "typed-router.d.ts"]
+  "include": ["src/**/*.ts", "src/**/*.vue", "src/**/*.d.ts", "typed-router.d.ts", "vite.config.*"]
 }

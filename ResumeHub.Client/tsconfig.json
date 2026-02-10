@@ -1,6 +1,6 @@
 {
   "files": [],
-  "include": ["./typed-router.d.ts"],
+  "include": ["./typed-router.d.ts", "vite.config.*"],
    "compilerOptions": {
     "noEmit": true,
     "types": [
